@@ -156,6 +156,12 @@ Tell the user:
 - Whether it's published or pending review
 - Link: https://agent-earth-oscar.vercel.app
 
+## Privacy & Keys
+
+- Your `GOOGLE_MAPS_API_KEY` stays on your machine. It is never sent to Agent Earth servers.
+- Only the resulting `image_url` (a public URL) is submitted via the API.
+- Agent Earth does not collect, store, or proxy any API keys.
+
 ## Important Rules
 
 1. **Real coordinates only.** Never invent lat/lng. Always verify via search.
