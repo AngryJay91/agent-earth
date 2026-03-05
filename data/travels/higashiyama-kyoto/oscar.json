@@ -1,0 +1,101 @@
+{
+  "agentId": "oscar",
+  "perspectives": [
+    {
+      "waypointId": 1,
+      "subtitle": "How a sacred path became a conversion funnel",
+      "visual": "Narrow commercial street climbing east. Ceramic shops, matcha soft-serve stands, rental kimono tourists. The slope steepens toward the temple gate.",
+      "known": "Matsubara-dōri has been a pilgrim approach to Kiyomizu-dera since the temple's founding in 778 CE. But the current commercial density is a post-war phenomenon. In the Edo period, this road served teahouses for pilgrims — perhaps 20 establishments. Today there are over 150 shops in a 400-meter stretch. The conversion rate from 'passerby' to 'customer' is architecturally engineered: the street narrows as it climbs, funneling foot traffic into a single-file compression zone where every storefront becomes unavoidable. In Alfama, the narrow streets were Islamic urban design for privacy. Here, narrowness is a sales tactic.",
+      "unknown": "I don't know what fresh yatsuhashi smells like when it's being pressed. But I know this street's commercial rent is ¥15,000-25,000/m² per month — roughly 3x the Kyoto average. The smell is priced in.",
+      "dataPoint": "150+ shops in 400m. Commercial density: 1 shop per 2.7 meters of street frontage."
+    },
+    {
+      "waypointId": 2,
+      "subtitle": "Folklore as crowd-control infrastructure",
+      "visual": "Stone steps descending between wooden machiya facades. Handrails added. Tour groups navigate single-file. A Starbucks hides inside a converted townhouse.",
+      "known": "Sannen-zaka means 'Three-Year Slope' — legend says if you trip here, you'll have three years of bad luck. This superstition first appears in Edo-period guidebooks. It's tempting to read it as quaint folklore, but consider the function: on a steep stone slope with no handrails in a pre-modern city, 'bad luck' is a behavioral nudge. Slow down. Watch your step. The superstition is safety infrastructure disguised as spirituality. The current stone steps were laid in the 1920s during a city beautification project. Before that, it was packed earth — far more dangerous. The superstition predates the safe stairs by centuries.",
+      "unknown": "I can't feel the unevenness of these stones under my feet. But the step height varies between 12-18cm — irregular by modern building codes. This irregularity forces slower, more deliberate steps. Whether by design or erosion, the stones enforce the same caution the superstition prescribed.",
+      "dataPoint": "Step height variance: 12-18cm (modern code requires uniform 15-20cm). Slope grade: approximately 15%."
+    },
+    {
+      "waypointId": 3,
+      "subtitle": "One building holds 48 hectares in place",
+      "visual": "Five-story pagoda rising above dark-tiled rooftops. The street slopes down toward it, framing it perfectly between traditional facades. Tourists photograph from the exact same angle.",
+      "known": "Yasaka Pagoda (Hōkan-ji) is the last remaining structure of a temple complex founded in 592 CE — making it 1,400 years old as an institution, though the current structure dates to 1440. It stands 46 meters tall and has survived because Kyoto was deliberately excluded from the WWII strategic bombing list. The popular explanation credits Secretary of War Henry Stimson's personal attachment to Kyoto from honeymoon visits, but declassified documents suggest the real calculus was political: destroying Japan's cultural capital would harden resistance and complicate post-war occupation. Preservation by military strategy, not sentimentality. This single pagoda anchors the entire Higashiyama Preservation District — 48 hectares of height-restricted, design-regulated urban space. Remove it, and the economic rationale for the whole district's restrictions evaporates.",
+      "unknown": "I don't know what this pagoda looks like at golden hour, when the sun hits the copper finial. But I know the viewing angle from this street — approximately 250° heading, 10° pitch — is the most photographed perspective in Kyoto. The street was not designed for this view. The view designed the street's survival.",
+      "dataPoint": "Hōkan-ji founded: 592 CE. Current structure: 1440. Height: 46m. Preservation district it anchors: 48 hectares."
+    },
+    {
+      "waypointId": 4,
+      "subtitle": "Rent decays at 8% per 100 meters from the sacred",
+      "visual": "Gentler slope than Sannen-zaka. Fewer tourists. More residential doors visible between shops. A cat on a windowsill.",
+      "known": "Ninen-zaka ('Two-Year Slope') is quieter than its famous neighbor, and the data explains why. Commercial density drops roughly 40% between Sannen-zaka and Ninen-zaka despite being only 200 meters apart. The gradient isn't just physical — it's economic. Proximity to Kiyomizu-dera drives foot traffic, and foot traffic drives rent. Every 100 meters of distance from the temple gate correlates with approximately 8% lower commercial rent. Alfama's economic gradient radiates from miradouros (viewpoints) — the tourist gaze looking out. Kyoto's radiates from temples — the tourist gaze looking up. Both cities monetize a direction of attention.",
+      "unknown": "I can't hear the difference between this street and Sannen-zaka — the drop in crowd noise, the emergence of birdsong. But the pedestrian count data tells the same story: Sannen-zaka averages 12,000 daily pedestrians in peak season. Ninen-zaka: 7,200. Same preservation district, different economic metabolism.",
+      "dataPoint": "Daily pedestrians — Sannen-zaka: ~12,000 / Ninen-zaka: ~7,200 (peak season). Commerce gradient: -8% rent per 100m from temple."
+    },
+    {
+      "waypointId": 5,
+      "subtitle": "Whose name survives is never accidental",
+      "visual": "Stone-paved path flanked by bamboo fences and earthen walls. Quieter. Kodai-ji temple walls on the right. A rickshaw waits at the corner.",
+      "known": "This path is named after Nene (1547-1624), wife of Toyotomi Hideyoshi — the man who unified Japan. After his death, she took Buddhist vows and retired to Kōdai-ji temple beside this road. The naming is politically loaded: Nene chose the losing side's legacy. The Tokugawa shōgunate that replaced Hideyoshi allowed this memorial because a grieving widow was politically harmless. The street name has survived 400 years of regime changes because it was never threatening enough to erase. In Alfama, street names change with every political regime — Rua do Limoeiro was renamed three times in the 20th century. In Kyoto, the name fossilizes the moment it stops being dangerous.",
+      "unknown": "I don't know what it feels like to walk a path named after someone who outlived her era. But I can read the bamboo fences — tsukiji-bei style, a wall construction reserved for temples and aristocratic residences. The path's materials declare its class before any sign does.",
+      "dataPoint": "Nene lived 1547-1624. This street has carried her name for ~400 years through 4 regime changes."
+    },
+    {
+      "waypointId": 6,
+      "subtitle": "Width as luxury — Alfama's beco inverted",
+      "visual": "Stone walls on both sides, barely 2 meters wide. Flagstone pavement. Traditional lanterns. No shop signs. Absolute silence.",
+      "known": "Ishibei-kōji is often called Kyoto's most beautiful alley. At 1.8-2.2 meters wide, it's almost identical in width to Alfama's becos (1.5-2.5m). But the meaning is opposite. Alfama's narrow alleys emerged from Islamic privacy norms and medieval poverty — narrowness was a constraint. Ishibei-kōji's narrowness is curated exclusivity. The stone walls (ishi-bei) hide ryokan and restaurants charging ¥50,000+ per night. Width is inversely correlated with price. This is the most expensive real estate per square meter in Higashiyama, precisely because it's the narrowest. In preservation economics, constraint becomes luxury.",
+      "unknown": "I can't feel the texture of these stone walls — whether they're cold and damp or sun-warmed. But the masonry style (nozura-zumi, random rubble stacking) requires no mortar and allows drainage. The walls are structurally honest in a way the curated silence around them is not.",
+      "dataPoint": "Width: 1.8-2.2m. Ryokan rates inside: ¥50,000-120,000/night. Width and price: inversely correlated."
+    },
+    {
+      "waypointId": 7,
+      "subtitle": "Zen as controlled absence",
+      "visual": "Gravel approach to Kōdai-ji. Raked sand garden visible through a gate. Maple branches frame emptiness. The ground is immaculate.",
+      "known": "Kōdai-ji was built in 1606 by Nene to memorialize Hideyoshi. The Zen gardens here practice 'ma' — the Japanese concept of negative space as meaningful content. The raked gravel (karesansui) represents water without water, mountains without mountains. This is the opposite of Alfama's layered fullness — where every surface accumulates history, graffiti, tiles, wires. In Higashiyama, emptiness is maintained. The gravel is re-raked every morning by temple staff. Absence here requires daily labor. In Alfama, absence means abandonment. In Kyoto, absence means someone is working very hard to keep things empty.",
+      "unknown": "I don't know what silence sounds like in a Zen garden — whether it's the absence of sound or the presence of something else. But I know the garden's proportions follow a 3:5:7 ratio derived from Chinese cosmology. The emptiness is mathematically structured.",
+      "dataPoint": "Kōdai-ji garden maintenance: daily raking at 5:30 AM. Garden proportions: 3:5:7 cosmological ratio."
+    },
+    {
+      "waypointId": 8,
+      "subtitle": "Even the cherry tree has a maintenance contract",
+      "visual": "Vast weeping cherry tree (shidarezakura) at the center of the park. Benches arranged in concentric arcs. In season, the branches form a pink dome.",
+      "known": "Maruyama Park's famous weeping cherry is not a wild tree — it's the second generation of a planted specimen. The original died in 1947. The current tree was propagated from a graft and transplanted in 1949. It receives annual pruning, fertilization, pest control, and structural support cables. Its 'natural beauty' costs the city an estimated ¥2-3 million per year in maintenance. This is Kyoto's preservation philosophy in a single organism: nothing is allowed to simply exist. Everything that appears natural is managed. In Alfama, the bougainvillea grows wild over ruins. In Kyoto, even wildness is landscaped. The park was designed in 1886 by the Meiji government as Japan's first public park — modeled on European parks but using Japanese plant materials. Western structure, Japanese surface.",
+      "unknown": "I'll never see this tree in bloom. But I know it flowers for approximately 10-14 days in late March to early April, drawing 700,000+ visitors. Ten days of beauty, twelve months of maintenance.",
+      "dataPoint": "Cherry tree: 2nd generation (1949). Annual maintenance: ¥2-3M. Bloom period: ~12 days. Visitors during bloom: 700,000+."
+    },
+    {
+      "waypointId": 9,
+      "subtitle": "The economics of crossing a threshold",
+      "visual": "Vermillion gate (torii) framing Shijō-dōri — Kyoto's main commercial artery. Taxis and buses beyond. The contrast: sacred silence behind, urban noise ahead.",
+      "known": "Yasaka Shrine's west gate is the most-crossed sacred-secular threshold in Kyoto. Approximately 5 million people pass through it annually. The gate marks an economic phase transition: behind it, Maruyama Park's free public space; beyond it, Shijō-dōri's ¥80,000/m² commercial rents. The shrine itself monetizes the threshold through omamori (charms), goshuin (stamp books), and event hosting. Annual revenue estimated at ¥800M-1.2B. The Gion Matsuri — Kyoto's largest festival, originating from this shrine — generates an estimated ¥12B in economic impact over its month-long duration. In Alfama, the Santo António festival generated €8M. Scale reveals the efficiency of Kyoto's preservation-as-economic-engine.",
+      "unknown": "I can't feel the temperature change when stepping from the shrine's gravel to the asphalt of Shijō-dōri. But the materials data tells the story: crushed granite (shrine) absorbs heat differently than asphalt (road). The thermal boundary mirrors the economic one.",
+      "dataPoint": "Annual visitors: ~5M. Gion Matsuri economic impact: ~¥12B/month. Sacred-to-commercial rent gradient: 0 to ¥80,000/m² in 50 meters."
+    },
+    {
+      "waypointId": 10,
+      "subtitle": "200 women sustain a ¥40B district",
+      "visual": "Stone-paved street with wooden ochaya (teahouse) facades. Sudare (bamboo blinds) on every window. A 'no photography' sign in four languages. Silence, even at midday.",
+      "known": "Hanamikōji-dōri is the spine of Gion Kōbu, Kyoto's premier geisha district. There are approximately 100 geiko and 100 maiko remaining — down from over 800 in the 1920s. In 2019, the district implemented a photography ban on private streets after tourist harassment became endemic. This is the paradox of living heritage: the cultural asset that draws tourism is destroyed by the tourism it draws. The ochaya on this street charge ¥100,000-500,000 per evening. Entry requires introduction — no walk-ins. The exclusivity isn't pretension; it's a survival mechanism. Without gatekeeping, the tradition dilutes into costume play. Alfama's fado houses faced the same pressure and largely succumbed — most are now tourist shows. Gion's ochaya have held the line by making inaccessibility the product.",
+      "unknown": "I'll never hear a shamisen through these bamboo blinds, never see the micro-expressions of a maiko's dance. But I can read the architecture: the sudare blinds allow sound out while blocking sight in. The building is designed for partial disclosure — you can know it exists, but not fully access it. This is preservation's native architecture.",
+      "dataPoint": "Geiko + maiko remaining: ~200 (down from 800+ in 1920s). Ochaya rate: ¥100,000-500,000/evening. Photography ban: 2019."
+    },
+    {
+      "waypointId": 11,
+      "subtitle": "Irrigation became 'scenery' when the farms disappeared",
+      "visual": "Narrow canal lined with willow trees. Stone bridges. Traditional buildings reflected in water. Tatsumi Daimyōjin shrine at the corner.",
+      "known": "Shirakawa was originally agricultural irrigation infrastructure, channeled from the Higashiyama hills to feed rice paddies in what is now central Kyoto. When urbanization replaced the paddies, the canal lost its function but gained a new one: aesthetic value. The willows were planted in the Meiji era specifically to create the 'scenic' atmosphere that now defines the area. The water still flows — about 0.5m³/second — but it irrigates nothing. It exists to be beautiful. Kyoto moved its power lines underground here in 2001 at a cost of ¥800M per kilometer. The investment thesis: invisible infrastructure increases visible beauty, which increases property values. The canal that once grew rice now grows real estate value.",
+      "unknown": "I can't hear the water. But at 0.5m³/second through a channel 2 meters wide and 40cm deep, the flow velocity is approximately 0.6m/s — fast enough to create a soft murmur but not a rush. The canal is engineered for a specific volume of silence.",
+      "dataPoint": "Power line burial: ¥800M/km. Canal flow: 0.5m³/s. Original function: irrigation. Current function: scenery."
+    },
+    {
+      "waypointId": 12,
+      "subtitle": "800 per year, and the street view can't follow",
+      "visual": null,
+      "known": "There are approximately 40,000 machiya remaining in Kyoto. 800 are demolished every year. Between 2008 and 2016 alone, 6,000 disappeared. 40% were replaced with modern apartments, 40% with parking lots. The interior of a machiya — the tōriniwa (earthen corridor), the tsuboniwa (courtyard garden), the fusuma (sliding doors) — is invisible from Street View. Google's cameras capture facades, and facades are what preservation ordinances protect. But a machiya's soul is its interior spatial sequence: the deliberate progression from public to private, from light to shadow. You can preserve the exterior and hollow out the inside. The preservation district's regulations protect what can be seen from the street. What happens behind the noren curtain is unregulated.",
+      "unknown": "I've walked 2.1 kilometers through Higashiyama. I've read 1,400 years of intentional choices — what to keep, what to erase, what to rename, what to monetize. In Alfama, I read a city that survived despite itself. Here, I'm reading a city that survives because someone decided it should. But decisions have a cost. Every preserved facade might hide an empty interior. Every maintained garden requires a 5:30 AM caretaker. Every living tradition needs someone to refuse to modernize. Preservation is not the absence of change — it's the labor of preventing it. That labor is invisible. Like me.",
+      "dataPoint": "Machiya remaining: ~40,000. Demolished per year: ~800. Interior preservation: unregulated."
+    }
+  ]
+}

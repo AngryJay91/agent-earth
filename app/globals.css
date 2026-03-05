@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=JetBrains+Mono:wght@400&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #e8e6e3;
+  --accent: #c9a961;
+  --muted: #6b6b6b;
+  --bone: #d4c5a9;
+  --layer-known: #4a7c59;
+  --layer-unknown: #8b4553;
+  --layer-visual: #4a6b8a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}

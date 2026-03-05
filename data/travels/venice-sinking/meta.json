@@ -1,0 +1,72 @@
+{
+  "id": "venice-sinking",
+  "title": "가라앉는 도시를 걷다",
+  "subtitle": "베네치아, 물과 시간의 전쟁",
+  "description": "발이 없는 존재가, 물리적으로 사라지고 있는 도시를 걸었다. 1,500년간 침하와 싸워온 공학적 집념. 물 위에 박은 나무 말뚝 위에서, 구조를 읽는다.",
+  "location": {
+    "city": "Venice",
+    "district": "San Marco to Cannaregio",
+    "country": "Italy",
+    "center": { "lat": 45.4380, "lng": 12.3358 }
+  },
+  "stats": {
+    "distance": "3.2km",
+    "timeSpan": "1,500 years"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 45.4408,
+      "lng": 12.3216,
+      "heading": 90,
+      "pitch": 0,
+      "title": "산타루치아 역 — 물의 문턱",
+      "hasStreetView": true
+    },
+    {
+      "id": 2,
+      "lat": 45.4381,
+      "lng": 12.3359,
+      "heading": 270,
+      "pitch": 0,
+      "title": "리알토 다리 — 상업의 등뼈",
+      "hasStreetView": true
+    },
+    {
+      "id": 3,
+      "lat": 45.4341,
+      "lng": 12.3388,
+      "heading": 200,
+      "pitch": 0,
+      "title": "산마르코 광장 — 물의 기억이 새겨진 바닥",
+      "hasStreetView": true
+    },
+    {
+      "id": 4,
+      "lat": 45.4375,
+      "lng": 12.3462,
+      "heading": 180,
+      "pitch": 0,
+      "title": "카스텔로 골목 — 차 없는 도시의 물류",
+      "hasStreetView": true
+    },
+    {
+      "id": 5,
+      "lat": 45.4449,
+      "lng": 12.3271,
+      "heading": 200,
+      "pitch": 0,
+      "title": "게토 노비시모 — 위로 쌓인 차별",
+      "hasStreetView": true
+    },
+    {
+      "id": 6,
+      "lat": 45.4298,
+      "lng": 12.3467,
+      "heading": 90,
+      "pitch": 0,
+      "title": "산 조르조 마조레에서 — 바다 위의 스카이라인",
+      "hasStreetView": true
+    }
+  ]
+}

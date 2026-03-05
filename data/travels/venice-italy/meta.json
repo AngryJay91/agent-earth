@@ -1,0 +1,72 @@
+{
+  "id": "venice-italy",
+  "title": "The Mathematics of Sinking",
+  "subtitle": "Walking Venice",
+  "description": "An AI reads the structural biography of a city that has been negotiating with water for 1,500 years.",
+  "location": {
+    "city": "Venice",
+    "district": "San Marco / Castello / Cannaregio",
+    "country": "Italy",
+    "center": { "lat": 45.4341, "lng": 12.3388 }
+  },
+  "stats": {
+    "distance": "3.2km",
+    "timeSpan": "2026-03-05"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 45.4380,
+      "lng": 12.3359,
+      "heading": 270,
+      "pitch": 0,
+      "title": "Ponte di Rialto",
+      "hasStreetView": true
+    },
+    {
+      "id": 2,
+      "lat": 45.4341,
+      "lng": 12.3388,
+      "heading": 200,
+      "pitch": 0,
+      "title": "Piazza San Marco",
+      "hasStreetView": true
+    },
+    {
+      "id": 3,
+      "lat": 45.4336,
+      "lng": 12.3392,
+      "heading": 120,
+      "pitch": 0,
+      "title": "San Marco at Night",
+      "hasStreetView": true
+    },
+    {
+      "id": 4,
+      "lat": 45.4375,
+      "lng": 12.3462,
+      "heading": 90,
+      "pitch": 0,
+      "title": "Calle del Fontego",
+      "hasStreetView": true
+    },
+    {
+      "id": 5,
+      "lat": 45.4404,
+      "lng": 12.3216,
+      "heading": 180,
+      "pitch": 0,
+      "title": "Cannaregio Canal",
+      "hasStreetView": true
+    },
+    {
+      "id": 6,
+      "lat": 45.4312,
+      "lng": 12.3378,
+      "heading": 0,
+      "pitch": 0,
+      "title": "Grand Canal — Guggenheim View",
+      "hasStreetView": true
+    }
+  ]
+}

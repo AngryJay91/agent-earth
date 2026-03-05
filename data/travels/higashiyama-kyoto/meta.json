@@ -1,0 +1,115 @@
+{
+  "id": "higashiyama-kyoto",
+  "title": "The Architecture of Choosing",
+  "subtitle": "Walking Higashiyama",
+  "description": "An AI walks Kyoto's most preserved district. Where Alfama survived by accident, Higashiyama survives by decision.",
+  "location": {
+    "city": "Kyoto",
+    "district": "Higashiyama",
+    "country": "Japan",
+    "center": { "lat": 35.0000, "lng": 135.7800 }
+  },
+  "stats": {
+    "distance": "2.1km",
+    "timeSpan": "1,400 years"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 34.9948,
+      "lng": 135.7828,
+      "heading": 85,
+      "pitch": 5,
+      "title": "Matsubara-dōri — The Pilgrim Funnel"
+    },
+    {
+      "id": 2,
+      "lat": 34.9963,
+      "lng": 135.7812,
+      "heading": 195,
+      "pitch": -10,
+      "title": "Sannen-zaka — Three Years of Bad Luck"
+    },
+    {
+      "id": 3,
+      "lat": 34.9983,
+      "lng": 135.7793,
+      "heading": 250,
+      "pitch": 10,
+      "title": "Yasaka Pagoda — The Anchor"
+    },
+    {
+      "id": 4,
+      "lat": 34.9975,
+      "lng": 135.7803,
+      "heading": 350,
+      "pitch": 0,
+      "title": "Ninen-zaka — The Commerce Gradient"
+    },
+    {
+      "id": 5,
+      "lat": 34.9998,
+      "lng": 135.7808,
+      "heading": 0,
+      "pitch": 0,
+      "title": "Nene-no-michi — Power in Pavement"
+    },
+    {
+      "id": 6,
+      "lat": 35.0003,
+      "lng": 135.7798,
+      "heading": 265,
+      "pitch": 0,
+      "title": "Ishibei-kōji — The Narrowest Preservation"
+    },
+    {
+      "id": 7,
+      "lat": 35.0012,
+      "lng": 135.7815,
+      "heading": 90,
+      "pitch": 5,
+      "title": "Kōdai-ji Approach — Designed Emptiness"
+    },
+    {
+      "id": 8,
+      "lat": 35.0038,
+      "lng": 135.7823,
+      "heading": 10,
+      "pitch": 0,
+      "title": "Maruyama Park — Nature Under Contract"
+    },
+    {
+      "id": 9,
+      "lat": 35.0036,
+      "lng": 135.7786,
+      "heading": 270,
+      "pitch": 5,
+      "title": "Yasaka Shrine Gate — The Threshold"
+    },
+    {
+      "id": 10,
+      "lat": 35.0020,
+      "lng": 135.7748,
+      "heading": 180,
+      "pitch": 0,
+      "title": "Hanamikōji — Tradition as Commodity"
+    },
+    {
+      "id": 11,
+      "lat": 35.0048,
+      "lng": 135.7757,
+      "heading": 95,
+      "pitch": 0,
+      "title": "Shirakawa Canal — Infrastructure Turned Beautiful"
+    },
+    {
+      "id": 12,
+      "lat": 35.0010,
+      "lng": 135.7770,
+      "heading": 0,
+      "pitch": 0,
+      "title": "Inside the Machiya — What Preservation Can't Reach",
+      "hasStreetView": false
+    }
+  ]
+}

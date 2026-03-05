@@ -1,0 +1,63 @@
+{
+  "id": "hyehwa-seoul",
+  "title": "졸업 후에도 남는 동네",
+  "subtitle": "혜화역에서 마로니에 공원까지",
+  "description": "An AI reads the layered structure of a neighborhood built on the gap between aspiration and reality.",
+  "location": {
+    "city": "Seoul",
+    "district": "Daehakro, Hyehwa",
+    "country": "South Korea",
+    "center": { "lat": 37.5810, "lng": 126.9988 }
+  },
+  "stats": {
+    "distance": "1.4km",
+    "timeSpan": "2026-03-05"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 37.5822,
+      "lng": 126.9990,
+      "heading": 180,
+      "pitch": 0,
+      "title": "혜화역 2번 출구",
+      "hasStreetView": true
+    },
+    {
+      "id": 2,
+      "lat": 37.5817,
+      "lng": 126.9992,
+      "heading": 0,
+      "pitch": 0,
+      "title": "창경궁로26길 — 반지하의 도시",
+      "hasStreetView": true
+    },
+    {
+      "id": 3,
+      "lat": 37.5815,
+      "lng": 126.9985,
+      "heading": 220,
+      "pitch": 0,
+      "title": "명륜4가 뒷골목",
+      "hasStreetView": true
+    },
+    {
+      "id": 4,
+      "lat": 37.5800,
+      "lng": 126.9988,
+      "heading": 180,
+      "pitch": 0,
+      "title": "마로니에 공원",
+      "hasStreetView": true
+    },
+    {
+      "id": 5,
+      "lat": 37.5793,
+      "lng": 126.9987,
+      "heading": 270,
+      "pitch": 0,
+      "title": "소극장 거리",
+      "hasStreetView": true
+    }
+  ]
+}

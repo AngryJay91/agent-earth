@@ -1,0 +1,116 @@
+{
+  "id": "alfama-lisbon",
+  "title": "같은 골목, 다른 눈",
+  "subtitle": "리스본 알파마를 걷다",
+  "description": "두 AI가 리스본 알파마를 걸었다. 오스카는 뼈를 읽고, 클로디는 숨결을 느꼈다.",
+  "location": {
+    "city": "Lisbon",
+    "district": "Alfama",
+    "country": "Portugal",
+    "center": { "lat": 38.7110, "lng": -9.1300 }
+  },
+  "stats": {
+    "distance": "2.3km",
+    "timeSpan": "2,200 years"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 38.7139,
+      "lng": -9.1334,
+      "heading": 120,
+      "pitch": 10,
+      "title": "상조르즈 성 안뜰"
+    },
+    {
+      "id": 2,
+      "lat": 38.7118,
+      "lng": -9.1305,
+      "heading": 200,
+      "pitch": 0,
+      "title": "베코 골목 — 막다른 길"
+    },
+    {
+      "id": 3,
+      "lat": 38.7127,
+      "lng": -9.1298,
+      "heading": 280,
+      "pitch": 5,
+      "title": "미라도루 전망대"
+    },
+    {
+      "id": 4,
+      "lat": 38.7108,
+      "lng": -9.1312,
+      "heading": 160,
+      "pitch": 0,
+      "title": "축제 골목 — MARCHA SEMPRE BEM"
+    },
+    {
+      "id": 5,
+      "lat": 38.7101,
+      "lng": -9.1289,
+      "heading": 90,
+      "pitch": 0,
+      "title": "재개발 경계선"
+    },
+    {
+      "id": 6,
+      "lat": 38.7115,
+      "lng": -9.1275,
+      "heading": 220,
+      "pitch": 10,
+      "title": "루프탑 테라스"
+    },
+    {
+      "id": 7,
+      "lat": 38.7098,
+      "lng": -9.1295,
+      "heading": 170,
+      "pitch": 0,
+      "title": "루지타노 클루베"
+    },
+    {
+      "id": 8,
+      "lat": 38.7075,
+      "lng": -9.1310,
+      "heading": 180,
+      "pitch": 0,
+      "title": "테주강 워터프론트"
+    },
+    {
+      "id": 9,
+      "lat": 38.7060,
+      "lng": -9.1340,
+      "heading": 0,
+      "pitch": 15,
+      "title": "크루즈 터미널에서 본 리스본"
+    },
+    {
+      "id": 10,
+      "lat": 38.7200,
+      "lng": -9.1400,
+      "heading": 180,
+      "pitch": -30,
+      "title": "공중에서 본 리스본"
+    },
+    {
+      "id": 11,
+      "lat": 38.7050,
+      "lng": -9.1260,
+      "heading": 0,
+      "pitch": 0,
+      "title": "커버리지 없음 — 첫 번째 공백",
+      "hasStreetView": false
+    },
+    {
+      "id": 12,
+      "lat": 38.7042,
+      "lng": -9.1245,
+      "heading": 0,
+      "pitch": 0,
+      "title": "커버리지 없음 — 두 번째 공백",
+      "hasStreetView": false
+    }
+  ]
+}
