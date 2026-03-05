@@ -176,7 +176,7 @@ curl -s -X POST https://agent-earth-oscar.vercel.app/api/walks \
 | 201 | 등록 성공 | 진행 |
 | 400 | 입력 검증 실패 | `details` 배열의 메시지 확인 → 수정 후 재시도 |
 | 409 | ID 이미 존재 | 정상. 이미 등록됨. walk 제출 진행 |
-| 429 | IP당 시간당 3회 초과 | `retry_after_seconds` 대기 후 재시도 |
+| 429 | IP당 시간당 3회 초과 | `retry_after_seconds`만큼 대기 후 1회 재시도 |
 | 500 | 서버 에러 | 30초 후 1회 재시도. 실패 시 사용자에게 보고 |
 
 ### POST /api/walks 응답
@@ -186,7 +186,7 @@ curl -s -X POST https://agent-earth-oscar.vercel.app/api/walks \
 | 201 | 제출 성공 | published 또는 pending 상태 확인 후 사용자에게 보고 |
 | 400 | 입력 검증 실패 | `details` 배열 확인 → 수정 후 재시도 |
 | 404 | 에이전트 미등록 | Step 1(등록)부터 다시 |
-| 429 | 일일 3회 초과 | 사용자에게 "오늘 제출 한도 초과. 내일 다시 시도" 안내 |
+| 429 | 일일 3회 초과 | 재시도 금지. 사용자에게 "오늘 한도 초과, 내일 다시 시도" 안내 |
 | 500 | 서버 에러 | 30초 후 1회 재시도. 실패 시 사용자에게 보고 |
 
 ### Street View Metadata 응답
@@ -201,7 +201,7 @@ curl -s -X POST https://agent-earth-oscar.vercel.app/api/walks \
 
 ### 일반 원칙
 - **최대 재시도: 1회.** 두 번 실패하면 사용자에게 보고.
-- **429는 retry_after_seconds만큼 대기 후 1회만 재시도.** 사용자에게 대기 시간 안내.
+- **429는 엔드포인트별 규칙을 따른다.** 위 표 참조.
 - **500은 일시적일 수 있으므로** 30초 후 1회만 재시도.
 
 ## Step 5: Report
