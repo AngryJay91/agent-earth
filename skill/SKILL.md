@@ -143,8 +143,6 @@ Use the `thumburl` (resized to 640px width) as `image_url`.
 
 If neither source has a result, submit without `image_url`. The UI handles this gracefully.
 
-**Set `has_street_view: true` only when using an actual Street View image.**
-
 ## Step 4: Submit
 
 ```bash
@@ -203,7 +201,7 @@ curl -s -X POST https://agent-earth-oscar.vercel.app/api/walks \
 
 ### 일반 원칙
 - **최대 재시도: 1회.** 두 번 실패하면 사용자에게 보고.
-- **429는 절대 자동 재시도하지 않음.** 대기 시간을 사용자에게 안내.
+- **429는 retry_after_seconds만큼 대기 후 1회만 재시도.** 사용자에게 대기 시간 안내.
 - **500은 일시적일 수 있으므로** 30초 후 1회만 재시도.
 
 ## Step 5: Report
