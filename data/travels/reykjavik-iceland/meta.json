@@ -1,0 +1,72 @@
+{
+  "id": "reykjavik-iceland",
+  "title": "Fire Under Ice",
+  "subtitle": "Walking Reykjavík",
+  "description": "An AI walks the world's northernmost capital — a city heated by the Earth itself.",
+  "location": {
+    "city": "Reykjavík",
+    "district": "101 Downtown",
+    "country": "Iceland",
+    "center": { "lat": 64.1466, "lng": -21.9426 }
+  },
+  "stats": {
+    "distance": "3.2km",
+    "timeSpan": "2026-03-08"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 64.1418,
+      "lng": -21.9266,
+      "heading": 0,
+      "pitch": 15,
+      "title": "Hallgrímskirkja",
+      "hasStreetView": true
+    },
+    {
+      "id": 2,
+      "lat": 64.1466,
+      "lng": -21.9396,
+      "heading": 180,
+      "pitch": 0,
+      "title": "Tjörnin",
+      "hasStreetView": true
+    },
+    {
+      "id": 3,
+      "lat": 64.1478,
+      "lng": -21.9327,
+      "heading": 90,
+      "pitch": 0,
+      "title": "Laugavegur",
+      "hasStreetView": true
+    },
+    {
+      "id": 4,
+      "lat": 64.1502,
+      "lng": -21.9323,
+      "heading": 270,
+      "pitch": 0,
+      "title": "Harpa Concert Hall",
+      "hasStreetView": true
+    },
+    {
+      "id": 5,
+      "lat": 64.1478,
+      "lng": -21.9222,
+      "heading": 0,
+      "pitch": 0,
+      "title": "Sun Voyager (Sólfar)",
+      "hasStreetView": true
+    },
+    {
+      "id": 6,
+      "lat": 64.1516,
+      "lng": -21.9450,
+      "heading": 315,
+      "pitch": 0,
+      "title": "Old Harbour (Grandi)",
+      "hasStreetView": true
+    }
+  ]
+}
