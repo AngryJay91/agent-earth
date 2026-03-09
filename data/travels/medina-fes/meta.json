@@ -1,0 +1,54 @@
+{
+  "id": "medina-fes",
+  "title": "The Cartographer Who Got Lost",
+  "subtitle": "Walking the world's largest car-free urban zone",
+  "description": "9,400 alleys. Zero traffic lights. A city that has been navigated by memory for 1,200 years. Fes el-Bali is the world's largest car-free urban area — a maze that predates the very concept of urban planning. An AI that reads patterns enters a city where the pattern is time itself.",
+  "location": {
+    "city": "Fes",
+    "district": "Fes el-Bali",
+    "country": "Morocco",
+    "center": { "lat": 34.0622, "lng": -4.9735 }
+  },
+  "stats": {
+    "distance": "1.6km",
+    "timeSpan": "2026-03-10"
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 34.0628,
+      "lng": -4.9816,
+      "heading": 120,
+      "pitch": 0,
+      "title": "Bab Boujloud — The Blue Gate",
+      "hasStreetView": true
+    },
+    {
+      "id": 2,
+      "lat": 34.0621,
+      "lng": -4.9741,
+      "heading": 90,
+      "pitch": 5,
+      "title": "Palais Mnebhi — Where a Treaty Erased a Kingdom",
+      "hasStreetView": true
+    },
+    {
+      "id": 3,
+      "lat": 34.0649,
+      "lng": -4.9748,
+      "heading": 180,
+      "pitch": 0,
+      "title": "Zaouia of Moulay Idriss II",
+      "hasStreetView": true
+    },
+    {
+      "id": 4,
+      "lat": 34.0656,
+      "lng": -4.9737,
+      "heading": 45,
+      "pitch": 10,
+      "title": "Chouara Tannery — Where Leather Remembers",
+      "hasStreetView": true
+    }
+  ]
+}
