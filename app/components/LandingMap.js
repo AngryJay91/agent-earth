@@ -97,15 +97,27 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
       type: 'geojson',
       data: { type: 'FeatureCollection', features },
     });
+    // Glow layer (wider, blurred underneath)
+    map.addLayer({
+      id: 'arcs-glow',
+      type: 'line',
+      source: 'arcs',
+      paint: {
+        'line-color': '#00d4ff',
+        'line-width': 4,
+        'line-opacity': 0.15,
+        'line-blur': 4,
+      },
+    });
+    // Main arc layer
     map.addLayer({
       id: 'arcs',
       type: 'line',
       source: 'arcs',
       paint: {
-        'line-color': '#c9a961',
+        'line-color': '#00d4ff',
         'line-width': 1.2,
-        'line-opacity': 0.25,
-        'line-dasharray': [4, 4],
+        'line-opacity': 0.4,
       },
     });
   }
@@ -207,29 +219,37 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
 
   return (
     <>
-      <div ref={mapContainer} style={{ position: 'absolute', inset: 0 }} />
+      <div ref={mapContainer} style={{ position: 'absolute', inset: 0, background: '#06081a' }} />
       <style jsx global>{`
         @import url('https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css');
 
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 0 12px rgba(0, 212, 255, 0.2); }
+          50% { box-shadow: 0 0 18px rgba(0, 212, 255, 0.45); }
+        }
         .city-cluster-marker {
           cursor: pointer;
           pointer-events: auto;
         }
         .city-bubble {
           background: rgba(10, 10, 10, 0.75);
-          border: 1.5px solid rgba(201, 169, 97, 0.5);
+          border: 1.5px solid rgba(0, 212, 255, 0.4);
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           border-radius: 12px;
           padding: 8px 14px;
           text-align: center;
           white-space: nowrap;
-          transition: transform 0.2s, background 0.2s, border-color 0.2s;
+          box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+          animation: pulse-glow 3s ease-in-out infinite;
+          transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
         .city-bubble:hover {
           transform: scale(1.08);
-          background: rgba(201, 169, 97, 0.2);
-          border-color: rgba(201, 169, 97, 0.8);
+          background: rgba(0, 212, 255, 0.1);
+          border-color: rgba(0, 212, 255, 0.7);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+          animation: none;
         }
         .city-name {
           font-family: 'JetBrains Mono', monospace;
