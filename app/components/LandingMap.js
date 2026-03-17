@@ -9,6 +9,7 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const pendingMoveEndRef = useRef(null);
   const [ready, setReady] = useState(false);
 
   // Load maplibre-gl dynamically
@@ -58,6 +59,10 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
 
     mapRef.current = map;
 
+    map.on('style.load', () => {
+      map.setProjection({ type: 'globe' });
+    });
+
     map.on('load', () => {
       addMarkers(map);
       addConnectionArcs(map);
@@ -97,15 +102,27 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
       type: 'geojson',
       data: { type: 'FeatureCollection', features },
     });
+    // Glow layer (wider, blurred underneath)
+    map.addLayer({
+      id: 'arcs-glow',
+      type: 'line',
+      source: 'arcs',
+      paint: {
+        'line-color': '#00d4ff',
+        'line-width': 4,
+        'line-opacity': 0.15,
+        'line-blur': 4,
+      },
+    });
+    // Main arc layer
     map.addLayer({
       id: 'arcs',
       type: 'line',
       source: 'arcs',
       paint: {
-        'line-color': '#c9a961',
+        'line-color': '#00d4ff',
         'line-width': 1.2,
-        'line-opacity': 0.25,
-        'line-dasharray': [4, 4],
+        'line-opacity': 0.4,
       },
     });
   }
@@ -154,11 +171,7 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
       `;
       el.addEventListener('click', () => {
         onSelectTravel(i);
-        map.flyTo({
-          center: [meta.location.center.lng, meta.location.center.lat],
-          zoom: isMobile ? 12 : 13,
-          duration: 1500,
-        });
+        // flyTo는 selectedTravel useEffect가 처리
       });
 
       const marker = new maplibregl.Marker({ element: el, anchor: 'center' })
@@ -182,60 +195,100 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
     }
   }
 
-  // Fly to selected or zoom out
+  // Fly to selected or zoom out (with globe ↔ mercator projection transition)
   useEffect(() => {
-    if (!mapRef.current) return;
+    const map = mapRef.current;
+    if (!map) return;
+
     if (selectedTravel !== null) {
+      // Globe → Mercator 전환 (도시 클릭)
       const meta = travels[selectedTravel].meta;
-      mapRef.current.flyTo({
+
+      // 기존 대기 중인 moveend 리스너 제거 (빠른 연속 클릭 대응)
+      if (pendingMoveEndRef.current) {
+        map.off('moveend', pendingMoveEndRef.current);
+        pendingMoveEndRef.current = null;
+      }
+
+      // flyTo 완료 후 mercator로 전환
+      const handler = () => {
+        if (mapRef.current) {
+          mapRef.current.setProjection({ type: 'mercator' });
+        }
+        pendingMoveEndRef.current = null;
+      };
+      pendingMoveEndRef.current = handler;
+      map.once('moveend', handler);
+
+      map.flyTo({
         center: [meta.location.center.lng, meta.location.center.lat],
         zoom: isMobile ? 12 : 13,
         duration: 1500,
       });
     } else {
-      const bounds = new maplibregl.LngLatBounds();
-      travels.forEach(t => {
-        bounds.extend([t.meta.location.center.lng, t.meta.location.center.lat]);
-      });
-      mapRef.current.fitBounds(bounds, {
-        padding: isMobile ? 60 : 100,
-        maxZoom: 3,
-        duration: 1200,
-      });
+      // Mercator → Globe 전환 (패널 닫기 / Esc)
+      // 대기 중인 moveend 리스너 제거
+      if (pendingMoveEndRef.current) {
+        map.off('moveend', pendingMoveEndRef.current);
+        pendingMoveEndRef.current = null;
+      }
+
+      // 즉시 globe로 전환 후 fitBounds
+      map.setProjection({ type: 'globe' });
+
+      if (travels.length > 0) {
+        const bounds = new maplibregl.LngLatBounds();
+        travels.forEach(t => {
+          bounds.extend([t.meta.location.center.lng, t.meta.location.center.lat]);
+        });
+        map.fitBounds(bounds, {
+          padding: isMobile ? 60 : 100,
+          maxZoom: 3,
+          duration: 1200,
+        });
+      }
     }
   }, [selectedTravel, isMobile]);
 
   return (
     <>
-      <div ref={mapContainer} style={{ position: 'absolute', inset: 0 }} />
+      <div ref={mapContainer} style={{ position: 'absolute', inset: 0, background: '#06081a' }} />
       <style jsx global>{`
         @import url('https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css');
 
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 0 12px rgba(0, 212, 255, 0.2); }
+          50% { box-shadow: 0 0 18px rgba(0, 212, 255, 0.45); }
+        }
         .city-cluster-marker {
           cursor: pointer;
           pointer-events: auto;
         }
         .city-bubble {
           background: rgba(10, 10, 10, 0.75);
-          border: 1.5px solid rgba(201, 169, 97, 0.5);
+          border: 1.5px solid rgba(0, 212, 255, 0.4);
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           border-radius: 12px;
           padding: 8px 14px;
           text-align: center;
           white-space: nowrap;
-          transition: transform 0.2s, background 0.2s, border-color 0.2s;
+          box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+          animation: pulse-glow 3s ease-in-out infinite;
+          transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
         .city-bubble:hover {
           transform: scale(1.08);
-          background: rgba(201, 169, 97, 0.2);
-          border-color: rgba(201, 169, 97, 0.8);
+          background: rgba(0, 212, 255, 0.1);
+          border-color: rgba(0, 212, 255, 0.7);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+          animation: none;
         }
         .city-name {
           font-family: 'JetBrains Mono', monospace;
           font-size: 13px;
           font-weight: 600;
-          color: #c9a961;
+          color: var(--primary);
         }
         .city-sub {
           font-family: 'JetBrains Mono', monospace;

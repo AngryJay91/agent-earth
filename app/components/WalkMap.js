@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const PRIMARY = '#00d4ff';
+
 let maplibregl = null;
 
 export default function WalkMap({ waypoints, activeIndex, center, onWaypointClick, isMobile = false }) {
@@ -121,7 +123,7 @@ export default function WalkMap({ waypoints, activeIndex, center, onWaypointClic
       id: 'route-full',
       type: 'line',
       source: 'route-full',
-      paint: { 'line-color': '#c9a961', 'line-width': 2, 'line-opacity': 0.4 },
+      paint: { 'line-color': PRIMARY, 'line-width': 2, 'line-opacity': 0.4 },
     });
 
     // Walked route (bright)
@@ -133,7 +135,7 @@ export default function WalkMap({ waypoints, activeIndex, center, onWaypointClic
       id: 'route-walked',
       type: 'line',
       source: 'route-walked',
-      paint: { 'line-color': '#c9a961', 'line-width': 3, 'line-opacity': 0.9 },
+      paint: { 'line-color': PRIMARY, 'line-width': 3, 'line-opacity': 0.9 },
     });
   }
 
@@ -168,9 +170,9 @@ export default function WalkMap({ waypoints, activeIndex, center, onWaypointClic
     const isActive = i === activeIndex;
     const isVisited = i < activeIndex;
     const size = isActive ? '18px' : '10px';
-    const bg = isActive ? '#c9a961' : isVisited ? '#666' : '#333';
+    const bg = isActive ? PRIMARY : isVisited ? '#666' : '#333';
     const border = isActive ? '3px solid #fff' : '2px solid #555';
-    const shadow = isActive ? '0 0 12px rgba(201,169,97,0.6)' : 'none';
+    const shadow = isActive ? '0 0 12px rgba(0,212,255,0.6)' : 'none';
 
     Object.assign(el.style, {
       width: size, height: size,

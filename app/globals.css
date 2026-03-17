@@ -3,7 +3,10 @@
 :root {
   --bg: #0a0a0a;
   --fg: #e8e6e3;
-  --accent: #c9a961;
+  --primary: #00d4ff;
+  --primary-dim: rgba(0, 212, 255, 0.5);
+  --primary-gradient: linear-gradient(90deg, #00d4ff, #7b61ff);
+  --primary-10: rgba(0, 212, 255, 0.1);
   --muted: #6b6b6b;
   --bone: #d4c5a9;
   --layer-known: #4a7c59;
