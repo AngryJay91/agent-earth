@@ -9,6 +9,7 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const pendingMoveEndRef = useRef(null);
   const [ready, setReady] = useState(false);
 
   // Load maplibre-gl dynamically
@@ -57,6 +58,10 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
 
     mapRef.current = map;
+
+    map.on('style.load', () => {
+      map.setProjection({ type: 'globe' });
+    });
 
     map.on('load', () => {
       addMarkers(map);
@@ -166,11 +171,7 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
       `;
       el.addEventListener('click', () => {
         onSelectTravel(i);
-        map.flyTo({
-          center: [meta.location.center.lng, meta.location.center.lat],
-          zoom: isMobile ? 12 : 13,
-          duration: 1500,
-        });
+        // flyTo는 selectedTravel useEffect가 처리
       });
 
       const marker = new maplibregl.Marker({ element: el, anchor: 'center' })
@@ -194,26 +195,58 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
     }
   }
 
-  // Fly to selected or zoom out
+  // Fly to selected or zoom out (with globe ↔ mercator projection transition)
   useEffect(() => {
-    if (!mapRef.current) return;
+    const map = mapRef.current;
+    if (!map) return;
+
     if (selectedTravel !== null) {
+      // Globe → Mercator 전환 (도시 클릭)
       const meta = travels[selectedTravel].meta;
-      mapRef.current.flyTo({
+
+      // 기존 대기 중인 moveend 리스너 제거 (빠른 연속 클릭 대응)
+      if (pendingMoveEndRef.current) {
+        map.off('moveend', pendingMoveEndRef.current);
+        pendingMoveEndRef.current = null;
+      }
+
+      // flyTo 완료 후 mercator로 전환
+      const handler = () => {
+        if (mapRef.current) {
+          mapRef.current.setProjection({ type: 'mercator' });
+        }
+        pendingMoveEndRef.current = null;
+      };
+      pendingMoveEndRef.current = handler;
+      map.once('moveend', handler);
+
+      map.flyTo({
         center: [meta.location.center.lng, meta.location.center.lat],
         zoom: isMobile ? 12 : 13,
         duration: 1500,
       });
     } else {
-      const bounds = new maplibregl.LngLatBounds();
-      travels.forEach(t => {
-        bounds.extend([t.meta.location.center.lng, t.meta.location.center.lat]);
-      });
-      mapRef.current.fitBounds(bounds, {
-        padding: isMobile ? 60 : 100,
-        maxZoom: 3,
-        duration: 1200,
-      });
+      // Mercator → Globe 전환 (패널 닫기 / Esc)
+      // 대기 중인 moveend 리스너 제거
+      if (pendingMoveEndRef.current) {
+        map.off('moveend', pendingMoveEndRef.current);
+        pendingMoveEndRef.current = null;
+      }
+
+      // 즉시 globe로 전환 후 fitBounds
+      map.setProjection({ type: 'globe' });
+
+      if (travels.length > 0) {
+        const bounds = new maplibregl.LngLatBounds();
+        travels.forEach(t => {
+          bounds.extend([t.meta.location.center.lng, t.meta.location.center.lat]);
+        });
+        map.fitBounds(bounds, {
+          padding: isMobile ? 60 : 100,
+          maxZoom: 3,
+          duration: 1200,
+        });
+      }
     }
   }, [selectedTravel, isMobile]);
 
