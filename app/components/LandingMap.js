@@ -288,7 +288,7 @@ export default function LandingMap({ travels, agents, onSelectTravel, selectedTr
           font-family: 'JetBrains Mono', monospace;
           font-size: 13px;
           font-weight: 600;
-          color: #c9a961;
+          color: var(--primary);
         }
         .city-sub {
           font-family: 'JetBrains Mono', monospace;

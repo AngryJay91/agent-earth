@@ -3,6 +3,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { getTravels } from './data/waypoints';
 import LandingMap from './components/LandingMap';
+
+const COLORS = {
+  primary: '#00d4ff',
+  primaryGradient: 'linear-gradient(90deg, #00d4ff, #7b61ff)',
+  primaryGradient135: 'linear-gradient(135deg, #00d4ff, #7b61ff)',
+  primary10: 'rgba(0, 212, 255, 0.1)',
+};
 import WalkMap from './components/WalkMap';
 
 const API_KEY = process.env.NEXT_PUBLIC_MAPS_API_KEY;
@@ -69,7 +76,7 @@ function ProgressDots({ total, activeIndex, onSelect, isMobile }) {
             height: isMobile ? '6px' : '8px',
             borderRadius: '4px',
             background: i === activeIndex
-              ? 'linear-gradient(90deg, #c9a961, #e8917a)'
+              ? COLORS.primaryGradient
               : i < activeIndex ? '#555' : '#333',
             border: 'none',
             cursor: 'pointer',
@@ -135,8 +142,8 @@ function StructuredFields({ fields, agentColor }) {
         <div style={{
           marginTop: '10px',
           fontFamily: "'JetBrains Mono', monospace",
-          fontSize: '0.7rem', color: agentColor || '#c9a961',
-          padding: '6px 10px', background: `${agentColor || '#c9a961'}10`, borderRadius: '6px',
+          fontSize: '0.7rem', color: agentColor || COLORS.primary,
+          padding: '6px 10px', background: agentColor ? `${agentColor}10` : COLORS.primary10, borderRadius: '6px',
         }}>
           📊 {highlightField[1]}
         </div>
@@ -370,7 +377,7 @@ function CityPanel({ travel, agents, onStart, onClose, isMobile }) {
         <div style={{
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: '0.6rem', fontWeight: 600, letterSpacing: '2px',
-          textTransform: 'uppercase', color: '#c9a961',
+          textTransform: 'uppercase', color: COLORS.primary,
         }}>
           {meta.location.city}, {meta.location.country}
         </div>
@@ -418,7 +425,7 @@ function CityPanel({ travel, agents, onStart, onClose, isMobile }) {
             <div key={s.label}>
               <div style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: '1rem', fontWeight: 600, color: '#c9a961',
+                fontSize: '1rem', fontWeight: 600, color: COLORS.primary,
               }}>{s.value}</div>
               <div style={{
                 fontFamily: "'JetBrains Mono', monospace",
@@ -434,7 +441,7 @@ function CityPanel({ travel, agents, onStart, onClose, isMobile }) {
           style={{
             width: '100%',
             padding: '14px',
-            background: 'linear-gradient(135deg, #c9a961, #e8917a)',
+            background: COLORS.primaryGradient135,
             border: 'none', borderRadius: '10px',
             color: '#0a0a0a', fontSize: '0.9rem', fontWeight: 700,
             cursor: 'pointer', letterSpacing: '0.05em',
@@ -519,7 +526,7 @@ export default function Home() {
   if (loading) {
     return (
       <div style={{ height: '100vh', background: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ color: '#c9a961', fontFamily: "'JetBrains Mono', monospace" }}>Loading walks...</div>
+        <div style={{ color: COLORS.primary, fontFamily: "'JetBrains Mono', monospace" }}>Loading walks...</div>
       </div>
     );
   }
@@ -569,7 +576,7 @@ export default function Home() {
         {/* Progress bar */}
         <div style={{
           position: 'absolute', top: 0, left: 0, height: '3px',
-          background: 'linear-gradient(90deg, #c9a961, #e8917a)',
+          background: COLORS.primaryGradient,
           width: `${((activeIndex + 1) / waypoints.length) * 100}%`,
           transition: 'width 0.5s ease', zIndex: 20,
         }} />
@@ -643,7 +650,7 @@ export default function Home() {
           <span style={{ fontSize: '28px' }}>🌍</span>
           <div>
             <div style={{
-              fontSize: '16px', fontWeight: 600, color: '#c9a961',
+              fontSize: '16px', fontWeight: 600, color: COLORS.primary,
               textShadow: '0 1px 10px rgba(0,0,0,0.8)', letterSpacing: '1px',
             }}>agent-earth</div>
             <div style={{
@@ -663,7 +670,7 @@ export default function Home() {
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
                 <div style={{
-                  fontSize: '20px', fontWeight: 600, color: '#c9a961',
+                  fontSize: '20px', fontWeight: 600, color: COLORS.primary,
                   textShadow: '0 1px 8px rgba(0,0,0,0.8)',
                 }}>{s.num}</div>
                 <div style={{
@@ -695,7 +702,7 @@ export default function Home() {
             { num: globalStats.walkers, label: 'walkers' },
           ].map(s => (
             <div key={s.label} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: '#c9a961' }}>{s.num}</div>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: COLORS.primary }}>{s.num}</div>
               <div style={{ fontSize: '9px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>{s.label}</div>
             </div>
           ))}
