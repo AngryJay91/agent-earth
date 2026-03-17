@@ -293,7 +293,7 @@ function FloatingCard({ wp, index, total, activeAgentId, agentOrder, agents, onA
           <p style={{ fontSize: isMobile ? '0.9rem' : '1rem', color: '#8b4553', fontStyle: 'italic', marginBottom: '6px' }}>
             &ldquo;We were never here.&rdquo;
           </p>
-          {distance && timeSpan && (
+          {distance != null && timeSpan != null && (
             <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: '#888' }}>
               {distance} · {timeSpan}
             </p>
@@ -585,7 +585,7 @@ export default function Home() {
             activeAgentId={activeAgentId} agentOrder={agentOrder} agents={agentsData}
             onAgentChange={setActiveAgentId} onPrev={goPrev} onNext={goNext}
             onDotSelect={setActiveIndex} isMobile={isMobile}
-            distance={travel.stats.distance} timeSpan={travel.stats.timeSpan} />
+            distance={travel?.stats?.distance} timeSpan={travel?.stats?.timeSpan} />
         </div>
 
         {/* Keyboard hint — desktop only */}
