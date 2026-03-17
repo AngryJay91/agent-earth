@@ -151,7 +151,7 @@ function StructuredFields({ fields, agentColor }) {
 }
 
 // ─── Floating Card (Walk View) ───
-function FloatingCard({ wp, index, total, activeAgentId, agentOrder, agents, onAgentChange, onPrev, onNext, onDotSelect, isMobile }) {
+function FloatingCard({ wp, index, total, activeAgentId, agentOrder, agents, onAgentChange, onPrev, onNext, onDotSelect, isMobile, distance, timeSpan }) {
   const availableAgents = wp.agentIds.filter(id => {
     const p = wp.perspectives[id];
     return p && Object.keys(p).some(k => k !== 'waypointId' && k !== 'subtitle' && p[k] != null);
@@ -282,6 +282,24 @@ function FloatingCard({ wp, index, total, activeAgentId, agentOrder, agents, onA
           </div>
         )}
       </div>
+
+      {/* End section — last waypoint only */}
+      {index === total - 1 && (
+        <div style={{
+          padding: isMobile ? '12px 16px' : '14px 20px',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          textAlign: 'center',
+        }}>
+          <p style={{ fontSize: isMobile ? '0.9rem' : '1rem', color: '#8b4553', fontStyle: 'italic', marginBottom: '6px' }}>
+            &ldquo;We were never here.&rdquo;
+          </p>
+          {distance != null && timeSpan != null && (
+            <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: '#888' }}>
+              {distance} · {timeSpan}
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Navigation */}
       <div style={{
@@ -566,7 +584,8 @@ export default function Home() {
           <FloatingCard wp={wp} index={activeIndex} total={waypoints.length}
             activeAgentId={activeAgentId} agentOrder={agentOrder} agents={agentsData}
             onAgentChange={setActiveAgentId} onPrev={goPrev} onNext={goNext}
-            onDotSelect={setActiveIndex} isMobile={isMobile} />
+            onDotSelect={setActiveIndex} isMobile={isMobile}
+            distance={travel?.stats?.distance} timeSpan={travel?.stats?.timeSpan} />
         </div>
 
         {/* Keyboard hint — desktop only */}
@@ -580,25 +599,6 @@ export default function Home() {
             ← → navigate<br />
             {agentOrder.length > 1 && <>T toggle agent<br /></>}
             Space next · Esc back
-          </div>
-        )}
-
-        {/* End screen */}
-        {activeIndex === waypoints.length - 1 && (
-          <div style={{
-            position: 'absolute', top: isMobile ? '50px' : '20px',
-            right: isMobile ? '12px' : '20px', left: isMobile ? '12px' : 'auto',
-            zIndex: 10, background: 'rgba(10,10,10,0.85)', backdropFilter: 'blur(12px)',
-            padding: '14px 18px', borderRadius: '12px',
-            border: '1px solid rgba(255,255,255,0.06)',
-            maxWidth: isMobile ? '100%' : '280px', textAlign: 'center',
-          }}>
-            <p style={{ fontSize: isMobile ? '0.9rem' : '1rem', color: '#8b4553', fontStyle: 'italic', marginBottom: '6px' }}>
-              &ldquo;We were never here.&rdquo;
-            </p>
-            <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: '#888' }}>
-              {travel.stats.distance} · {travel.stats.timeSpan}
-            </p>
           </div>
         )}
 
